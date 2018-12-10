@@ -50,16 +50,16 @@ const S: u32x4 = u32x4(0x6745_2301, 0xEFCD_AB89, 0x98BA_DCFE, 0x1032_5476);
 type Block = GenericArray<u8, U64>;
 
 #[derive(Copy, Clone)]
-struct Md4State {
-    s: u32x4,
+pub struct Md4State {
+    pub s: u32x4,
 }
 
 /// The MD4 hasher
 #[derive(Clone, Default)]
 pub struct Md4 {
-    length_bytes: u64,
-    buffer: BlockBuffer<U64>,
-    state: Md4State,
+    pub length_bytes: u64,
+    pub buffer: BlockBuffer<U64>,
+    pub state: Md4State,
 }
 
 impl Md4State {
